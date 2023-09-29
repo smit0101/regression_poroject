@@ -2,6 +2,7 @@ from src.data_preparation import generate_regression_data
 from src.model import create_regression_model
 from src.train import train_regression_model
 from src.predict import predict_regression
+from flask import Flask
 
 # Generate synthetic regression data
 X_train, y_train = generate_regression_data()
@@ -14,3 +15,13 @@ train_regression_model(regression_model, X_train, y_train, epochs=100, batch_siz
 sample_input = [[0.5]]  # Example input for prediction
 predicted_value = predict_regression(regression_model, sample_input)
 print(f"Predicted value: {predicted_value[0][0]}")
+
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+     return f"Predicted value: {predicted_value[0][0]}"
+
+if __name__ == '__main__':
+      app.run()
