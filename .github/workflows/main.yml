@@ -24,4 +24,4 @@ jobs:
       run: docker build -t regression_project .
 
     - name: Run Docker container
-      run: docker run regression_project
+      run: docker run -d -p 80:80 regression_project
