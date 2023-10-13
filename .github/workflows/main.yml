@@ -17,7 +17,7 @@ jobs:
       run: sudo apt-get install docker.io -y
 
     - name: Set up Python
-      uses: actions/setup-python@v2
+      run: sudo apt install python3 python3-pip -y
       
     - name: Check Python Version
       run: python3 --version
