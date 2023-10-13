@@ -13,11 +13,13 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Install Docker
+      run: sudo apt-get install docker.io -y
+
     - name: Set up Python
       uses: actions/setup-python@v2
-      with:
-        python-version: 3.10.12 
-    - name: Install Python
+      
+    - name: Check Python Version
       run: python3 --version
 
     - name: Build Docker image
