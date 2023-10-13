@@ -23,7 +23,7 @@ jobs:
       run: python3 --version
 
     - name: Build Docker image
-      run: docker build -t regression_project .
+      run: sudo docker build -t regression_project .
 
     - name: Run Docker container
-      run: docker run -d -p 80:80 regression_project
+      run: sudo docker run -d -p 80:80 regression_project
