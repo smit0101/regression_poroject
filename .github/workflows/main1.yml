@@ -1,0 +1,32 @@
+name: Python Hello World CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: self-hosted[smit2]
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Echo Message
+      run: echo "Running Job on Windows Self Hosted Runner"
+
+    # - name: Install Docker
+    #   run: sudo apt-get install docker.io -y
+
+    # - name: Set up Python
+    #   run: sudo apt install python3 python3-pip -y
+      
+    # - name: Check Python Version
+    #   run: python3 --version
+    #        echo "Running Job On Self-Hosted Runner Smit"
+
+    # - name: Build Docker image
+    #   run: sudo docker build -t regression_project .
+
+    # - name: Run Docker container
+    #   run: sudo docker run -d -p 80:80 regression_project
